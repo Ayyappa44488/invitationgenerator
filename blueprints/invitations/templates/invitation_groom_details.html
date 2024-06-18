@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Marriage Details</title>
+    <link rel="icon" href="/static/images/home/logo.png" type="image/png">
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/static/fonts/invitations/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/css/invitation/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Groom Details</h2>
+                        <form action="/invitation/couple_details" method="POST" class="register-form" id="register-form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="groom_name"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" name="groom_name" id="groom_name" placeholder="Groom Name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="qualification"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" name="qualification" id="qualification" placeholder="Qualification"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="dob"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="date" name="dob" id="dob" placeholder="DOB"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="relative1"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="relative1" id="relative1" placeholder="Relative's Name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="relation1"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="relation1" id="relation1" placeholder="Relation"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="relative2"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="relative2" id="relative2" placeholder="Relative's Name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="relation2"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="relation2" id="relation2" placeholder="Relation"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="relative3"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="relative3" id="relative3" placeholder="Relative's Name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="relation3"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="relation3" id="relation3" placeholder="Relation"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="image"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="file" name="image" id="image" data-max_length="1" placeholder="Groom image"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Next"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image" style="height:600px;">
+                        <figure><img src="/static/images/invitation/groom.png" alt="sing up image" ></figure>
+                        <!-- <a href="#" class="signup-image-link">I am already member</a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sing in  Form -->
+
+    </div>
+
+    <!-- JS -->
+    <script src="/static/jquery/invitations/jquery/jquery.min.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
