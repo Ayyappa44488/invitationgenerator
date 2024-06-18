@@ -1,6 +1,7 @@
-Flask
+flask
 mysql-connector
 sqlalchemy
 pymysql
 flask_migrate
-flask_bycrypt
+flask_bcrypt
+base64
