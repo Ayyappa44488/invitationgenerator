@@ -72,26 +72,10 @@
               </a>
               {%endif%}
               <!-- #popup form -->
-              <div class="form-popup" id="myForm">
-                <form class="form-container" action="/logout" >
-                  <span onclick="closeForm()" class="close" title="Close window">&times;</span>
-                  <center><img src="/static/user.png"  style="border-radius:2.8cm"><br><br>
-                    <hr><br>
-                    <label for="email"><b><span style="color:#fff">Hai...Welcome to Tele-medicine kiosk :)</span></b></label>
-                    <br><br>
-                    <label for="psw"><b><span style="color:#fff"></span></b></label>
-                  </center>
-                  <br>
-                  <hr><br>
-                  {%if session['user']%}<button type="button" class="btn" onclick="document.location='/doctorregister' "><b>Register Doctor</b></button>{%endif%}
-                  {%if session['user']%}<button type="button" class="btn" onclick="document.location='/asha' "><b>Asha Worker Register</b></button>{%endif%}
-                  <button type="submit" class="btn" onclick="document.location='/logout' "><b>Logout</b></button>
-                </form>
-              <!-- end form -->
-              </div>
-              <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+              
+              <!-- <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-              </form>
+              </form> -->
             </div>
           </div>
           <div>
@@ -353,7 +337,23 @@
     </div>
   </footer>
   <!-- end  footer section -->
-
+  <div class="form-popup" id="myForm">
+    <form class="form-container" action="/user/logout" >
+      <span onclick="closeForm()" class="cancel" title="Close window">&times;</span>
+      <center><span style="color:#000">Hello {{session['user_name']}}</span>
+        <hr><br>
+        <label for="email"><b><span style="color:#000">Welcome to Marryme :)</span></b></label>
+        <!-- <br><br>
+        <label for="psw"><b><span style="color:#000"></span></b></label> -->
+      </center>
+      <br>
+      
+      <button type="button" class="btn" onclick="document.location='/invitation/viewcards' "><b>viewcards</b></button>
+      <!-- {%if session['user']%}<button type="button" class="btn" onclick="document.location='/asha' "><b>Asha Worker Register</b></button>{%endif%} -->
+      <button type="submit" class="btn"><b>Logout</b></button>
+    </form>
+  <!-- end form -->
+  </div>
   
   <script src="/static/js/home/jquery-3.4.1.min.js"></script>
   <script src="/static/js/home/bootstrap.js"></script>

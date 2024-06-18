@@ -123,3 +123,23 @@ def rvsp():
    db.session.add(guest)
    db.session.commit()
    return redirect('/invitation/view/'+invitation_id)
+
+
+@invitation.route('/viewcards')
+def viewcards():
+   invitations=Invitation.query.filter_by(user_id=session['user_id']).all()
+   couple_details=[]
+   for invitation in invitations:
+      groom_details=Couple.query.filter_by(invitation_id=invitation.id,groom_bride=True).first()
+      bride_details=Couple.query.filter_by(invitation_id=invitation.id,groom_bride=False).first()
+      couple_details.append({'id':invitation.id,'groom_name':groom_details.name,'bride_name':bride_details.name,'marriage_date':invitation.marriage_date})
+   return render_template('user_viewcards.html',data=couple_details)
+
+
+@invitation.route('/viewguests/<invitation_id>')
+def viewguests(invitation_id):
+   guests=Guest.query.filter_by(invitation_id=invitation_id).all()
+   guests_details=[]
+   for guest in guests:
+      guests_details.append({'name':guest.name,'phone':guest.phone,'guests_count':guest.guests_count,'attending':guest.attending,'message':guest.message})
+   return render_template('user_viewguests.html',data=guests_details)

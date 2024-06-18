@@ -31,6 +31,7 @@ def validate():
     if data and data.verify_password(password):
         session['logged_in']=True
         session['user_id']=data.id
+        session['user_name']=(data.name).capitalize()
         return redirect('/')
     else:
         return jsonify({'message':'Login Failed'})
@@ -38,7 +39,7 @@ def validate():
     
 @user.route('/logout')
 def logout():
-    session.pop('logged_in',None)
+    session.clear()
     return redirect('/')
     
 

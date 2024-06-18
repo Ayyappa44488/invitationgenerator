@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards Designed</title>
+    <link rel="icon" href="/static/images/home/logo.png" type="image/png">
+    <link rel="stylesheet" href="/static/css/invitation/dashboard.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+    <div class="header_fixed" id="userdata">
+        <table>
+            <div class="head">
+                <thead>
+                    <tr style="border: 2px solid #5bdae3;">
+                        <th>Cards<span id="span">Designed</span></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </div>
+            <tbody>
+                <tr style="border: 2px solid #5bdae3;">
+                    <th>Groom Name</th>
+                    <th>Bride Name</th>
+                    <th>Marriage Date</th>
+                    <th>Guests Attending</th>
+                    <th>View Card</th>
+                </tr>
+                {% for row in data %}
+                <tr>
+                    <!-- <td>{{row.id}}</td> -->
+                    <td>{{row.groom_name}}</td>
+                    <td>{{ row.bride_name }}</td>
+                    <td>{{row.marriage_date}}</td>
+                    <td><button class="btn2" data-unique-number="{{ row.id }}"><b><i class="uil uil-eye" style="margin-right:10px;"> view</b></button></td>
+                    <td><button class="btn1" data-unique-number="{{ row.id }}"><b><i class="uil uil-eye" style="margin-right:10px;"> view</b></button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div><br>
+    <center><button onclick="document.location='/'" class="home-btn">Go Home</button></center>
+
+    <script>
+        const btns1 = document.querySelectorAll('.btn1');
+        btns1.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const uniqueNumber = this.getAttribute('data-unique-number');
+                window.location.href = `/invitation/view/${uniqueNumber}`;
+            });
+        });
+
+        const btns2 = document.querySelectorAll('.btn2');
+        btns2.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const uniqueNumber = this.getAttribute('data-unique-number');
+                window.location.href = `/invitation/viewguests/${uniqueNumber}`;
+            });
+        });
+    </script>
+</body>
+</html>

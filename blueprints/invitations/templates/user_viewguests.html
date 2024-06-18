@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards Designed</title>
+    <link rel="icon" href="/static/images/home/logo.png" type="image/png">
+    <link rel="stylesheet" href="/static/css/invitation/dashboard.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+    <div class="header_fixed" id="userdata">
+        <table>
+            <div class="head">
+                <thead>
+                    <tr style="border: 2px solid #5bdae3;">
+                        <th>Guests<span id="span">RVSP</span></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </div>
+            <tbody>
+                <tr style="border: 2px solid #5bdae3;">
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>No. of Guests</th>
+                    <th>Attending</th>
+                    <th>Message(if any)</th>
+                </tr>
+                {% for row in data %}
+                <tr>
+                    <td>{{row.name}}</td>
+                    <td>{{row.phone}}</td>
+                    <td>{{ row.guests_count}}</td>
+                    <td>{{row.attending}}</td>
+                    <td>{{row.message}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div><br>
+    <center><button onclick="document.location='/'" class="home-btn">Go Home</button></center>
+</body>
+</html>
