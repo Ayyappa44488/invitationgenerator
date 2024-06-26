@@ -10,7 +10,8 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
     created_at = db.Column(db.DateTime, server_default=db.func.now())
-    updated_at = db.Column(db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
+    updated_at = db.Column(db.DateTime, server_default=db.func.now(),
+                           server_onupdate=db.func.now())
     deleted_at = db.Column(db.DateTime, nullable=True)
 
     def __repr__(self):
@@ -22,7 +23,8 @@ class User(db.Model):
 
     @password.setter
     def password(self, plaintext_password):
-        self.password_hash = bcrypt.generate_password_hash(plaintext_password).decode('utf-8')
+        self.password_hash = bcrypt.generate_password_hash(
+            plaintext_password).decode('utf-8')
 
     def verify_password(self, plaintext_password):
         return bcrypt.check_password_hash(self.password_hash, plaintext_password)

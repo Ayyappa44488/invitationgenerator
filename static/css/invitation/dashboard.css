@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    src: url("/static/fonts/invitations/fonts/poppins/poppins-v5-latin-300.eot");
+    /* IE9 Compat Modes */
+    src: local("Poppins Light"), local("Poppins-Light"), url("/static/fonts/invitations/fonts/poppins/poppins-v5-latin-300.eot?#iefix") format("embedded-opentype"), url("/static/fonts/invitations/fonts/poppins/poppins-v5-latin-300.woff2") format("woff2"), url("/static/fonts/invitations/fonts/poppins/poppins-v5-latin-300.woff") format("woff"), url("/static/fonts/invitations/fonts/poppins/poppins-v5-latin-300.ttf") format("truetype"), url("/static/fonts/invitations/fonts/poppins/poppins-v5-latin-300.svg#Poppins") format("svg");
+    /* Legacy iOS */ }
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +17,8 @@ body {
     padding-right: 10px;
     width: 100%;
     justify-content: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: Poppins;
+    font-weight: 400;
 }
 
 table {
@@ -107,4 +116,11 @@ tbody th{
     /* box-shadow: 0 12px 17px 0 rgba(119, 154, 173, 0.715),0 17px 50px 0 rgba(110, 228, 222, 0.77); */
     box-shadow: 3px 3px 3px #5bdae3;
 
+}
+
+i{
+    padding: 10px;
+}
+i:hover{
+    color:#000;
 }

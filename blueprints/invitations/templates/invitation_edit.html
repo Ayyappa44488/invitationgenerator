@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Wedding Details</title>
+    <link rel="icon" href="/static/images/home/logo.png" type="image/png">
+    <link rel="stylesheet" href="/static/css/invitation/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Wedding Details</h1>
+        
+        <form id="wedding-form" action="/invitation/update_weddingdetails" method="POST" enctype="multipart/form-data">
+            <!-- Phase 1: Place, Date, Time -->
+            <div class="form-phase" id="phase-1">
+                <h2>Wedding Details</h2>
+                <label for="place">Place:</label>
+                <input type="text" id="place" name="place" value="{{details['place']}}" required>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" value="{{details['marriage_date']}}" required>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" value="{{details['marriage_time']}}" required>
+            </div>
+            
+            <!-- Phase 2: Bride Details -->
+            <div class="form-phase" id="phase-2">
+                <h2>Groom Details</h2>
+                <label for="groom-name">Name:</label>
+                <input type="text" id="groom-name" name="groom-name" value="{{details['groom_name']}}" required>
+
+                <label for="groom-qualification">Qualification:</label>
+                <input type="text" id="groom-qualification" name="groom-qualification" value="{{details['groom_qualification']}}" required>
+
+                <label for="groom-dob">Date of Birth:</label>
+                <input type="date" id="groom-dob" name="groom-dob" value="{{details['groom_dob']}}" required>
+
+                <label for="groom-relative1">Relative 1:</label>
+                <input type="text" id="groom-relative1" name="groom-relative1" value="{{details['groom_relative1']}}" required>
+
+                <label for="groom-relation1">Relation 1:</label>
+                <input type="text" id="groom-relation1" name="groom-relation1" value="{{details['groom_relation1']}}" required>
+
+                <label for="groom-relative2">Relative 2:</label>
+                <input type="text" id="groom-relative2" name="groom-relative2" value="{{details['groom_relative2']}}" required>
+
+                <label for="groom-relation2">Relation 2:</label>
+                <input type="text" id="groom-relation2" name="groom-relation2" value="{{details['groom_relation2']}}" required>
+
+                <label for="groom-relative3">Relative 3:</label>
+                <input type="text" id="groom-relative3" name="groom-relative3" value="{{details['groom_relative3']}}" required>
+
+                <label for="groom-relation3">Relation 3:</label>
+                <input type="text" id="groom-relation3" name="groom-relation3" value="{{details['groom_relation3']}}" required>
+
+                <label for="groom-pic">Picture:</label>
+                <input type="file" id="groom-pic" name="groom-pic" accept="image/*" onchange="loadGroomImage(event)" >
+                <div class="image-preview">
+                    <img id="groom-img-preview" src="data:photo/png;base64,{{details['groom_image']}}" alt="Groom Image Preview">
+                </div>
+            </div>
+
+            <div class="form-phase" id="phase-3">
+                <h2>Bride Details</h2>
+                <label for="bride-name">Name:</label>
+                <input type="text" id="bride-name" name="bride-name" value="{{details['bride_name']}}" required>
+
+                <label for="bride-qualification">Qualification:</label>
+                <input type="text" id="bride-qualification" name="bride-qualification" value="{{details['bride_qualification']}}" required>
+
+                <label for="bride-dob">Date of Birth:</label>
+                <input type="date" id="bride-dob" name="bride-dob" value="{{details['bride_dob']}}" required>
+
+                <label for="bride-relative1">Relative 1:</label>
+                <input type="text" id="bride-relative1" name="bride-relative1" value="{{details['bride_relative1']}}" required>
+
+                <label for="bride-relation1">Relation 1:</label>
+                <input type="text" id="bride-relation1" name="bride-relation1" value="{{details['bride_relation1']}}" required>
+
+                <label for="bride-relative2">Relative 2:</label>
+                <input type="text" id="bride-relative2" name="bride-relative2" value="{{details['bride_relative2']}}" required>
+
+                <label for="bride-relation2">Relation 2:</label>
+                <input type="text" id="bride-relation2" name="bride-relation2" value="{{details['bride_relation2']}}" required>
+
+                <label for="bride-relative3">Relative 3:</label>
+                <input type="text" id="bride-relative3" name="bride-relative3" value="{{details['bride_relative3']}}" required>
+
+                <label for="bride-relation3">Relation 3:</label>
+                <input type="text" id="bride-relation3" name="bride-relation3" value="{{details['bride_relation3']}}" required>
+
+                <label for="bride-pic">Picture:</label>
+                <input type="file" id="bride-pic" name="bride-pic" accept="image/*" onchange="loadBrideImage(event)" >
+                <div class="image-preview">
+                    <img id="bride-img-preview" src="data:photo/png;base64,{{details['bride_image']}}" alt="Bride Image Preview">
+                </div>
+            </div>
+            
+            <!-- Phase 3: Groom Details -->
+            
+            
+            <!-- Phase 4: Couple Images -->
+            <div class="form-phase" id="phase-4">
+                <h2>Couple Images</h2>
+                <div class="existing-images">
+                    {%for image in details['images']%}
+                    <div class="existing-image" id="{{image.id}}">
+                        <img src="data:photo/png;base64,{{image.image}}" alt="Couple Image 1" >
+                        <button type="button" class="remove-btn" onclick="removeImage('{{image.id}}')">&times;</button>
+                    </div>
+                    {%endfor%}
+                </div>
+                <label for="new-couple-pic">Add New Picture:</label>
+                <input type="file" id="new-couple-pic" name="new-couple-pic" accept="image/*" multiple>
+            </div>
+            
+            <div class="form-navigation">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                <button type="submit" id="submitBtn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/static/js/invitation/script.js"></script>
+</body>
+</html>

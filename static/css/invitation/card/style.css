@@ -7289,6 +7289,10 @@ button.bg-dark:focus {
   height: 100% !important;
 }
 
+.h-300{
+  height: 300px !important;
+}
+
 .h-auto {
   height: auto !important;
 }
@@ -7297,8 +7301,16 @@ button.bg-dark:focus {
   max-width: 100% !important;
 }
 
+.mw-300 {
+  max-height: 300px !important;
+}
+
 .mh-100 {
   max-height: 100% !important;
+}
+
+.mh-300{
+  max-height: 300px !important;
 }
 
 .min-vw-100 {

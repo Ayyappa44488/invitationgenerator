@@ -9,6 +9,8 @@
     <link rel="icon" href="/static/images/home/logo.png" type="image/png">
     <link rel="stylesheet" href="/static/css/invitation/dashboard.css" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
@@ -31,7 +33,7 @@
                     <th>Bride Name</th>
                     <th>Marriage Date</th>
                     <th>Guests Attending</th>
-                    <th>View Card</th>
+                    <th>Delete/Edit/View</th>
                 </tr>
                 {% for row in data %}
                 <tr>
@@ -39,8 +41,10 @@
                     <td>{{row.groom_name}}</td>
                     <td>{{ row.bride_name }}</td>
                     <td>{{row.marriage_date}}</td>
-                    <td><button class="btn2" data-unique-number="{{ row.id }}"><b><i class="uil uil-eye" style="margin-right:10px;"> view</b></button></td>
-                    <td><button class="btn1" data-unique-number="{{ row.id }}"><b><i class="uil uil-eye" style="margin-right:10px;"> view</b></button></td>
+                    <td><span onclick="document.location='/invitation/viewguests/{{row.id}}'"><b><i class="material-icons">&#xe8ef;</i></b></span></td>
+                    <td><span onclick="document.location='/invitation/delete/{{row.id}}'"><b><i class="material-icons">&#xe872;</i></b></span><!--Delete-->
+                        <span onclick="document.location='/invitation/edit/{{row.id}}'"><b><i class="material-icons">&#xe3c9;</i></b></span><!--Edit-->
+                        <span onclick="document.location='/invitation/view/{{row.id}}'"><b><i class="material-icons">&#xe89e;</i></b></span></td><!--View-->
                 </tr>
                 {% endfor %}
             </tbody>
@@ -65,5 +69,6 @@
             });
         });
     </script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </body>
 </html>

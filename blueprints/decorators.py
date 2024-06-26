@@ -7,4 +7,5 @@ def login_required(f):
         if 'logged_in' not in session or not session['logged_in']:
             return redirect('/user/login')  # Redirect to the login page if not logged in
         return f(*args, **kwargs)
+
     return decorated_function
