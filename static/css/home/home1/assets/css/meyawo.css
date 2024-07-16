@@ -637,7 +637,13 @@ pre code {
   width: auto;
   max-width: 100%;
 }
+.owidth{
+  width : 400px !important;
+}
 
+.oheight{
+  height : 360px !important;
+}
 .col-1 {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 8.33333%;

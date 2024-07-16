@@ -37,24 +37,6 @@
                 <label for="groom-dob">Date of Birth:</label>
                 <input type="date" id="groom-dob" name="groom-dob" value="{{details['groom_dob']}}" required>
 
-                <label for="groom-relative1">Relative 1:</label>
-                <input type="text" id="groom-relative1" name="groom-relative1" value="{{details['groom_relative1']}}" required>
-
-                <label for="groom-relation1">Relation 1:</label>
-                <input type="text" id="groom-relation1" name="groom-relation1" value="{{details['groom_relation1']}}" required>
-
-                <label for="groom-relative2">Relative 2:</label>
-                <input type="text" id="groom-relative2" name="groom-relative2" value="{{details['groom_relative2']}}" required>
-
-                <label for="groom-relation2">Relation 2:</label>
-                <input type="text" id="groom-relation2" name="groom-relation2" value="{{details['groom_relation2']}}" required>
-
-                <label for="groom-relative3">Relative 3:</label>
-                <input type="text" id="groom-relative3" name="groom-relative3" value="{{details['groom_relative3']}}" required>
-
-                <label for="groom-relation3">Relation 3:</label>
-                <input type="text" id="groom-relation3" name="groom-relation3" value="{{details['groom_relation3']}}" required>
-
                 <label for="groom-pic">Picture:</label>
                 <input type="file" id="groom-pic" name="groom-pic" accept="image/*" onchange="loadGroomImage(event)" >
                 <div class="image-preview">
@@ -62,7 +44,22 @@
                 </div>
             </div>
 
-            <div class="form-phase" id="phase-3">
+            <!-- Phase 3: Groom Reletives -->
+             <div class="form-phase" id="phase-3">
+                <h2>Groom Relatives</h2>
+                {% for i in details['groom_relatives'] %}
+                
+                <label for="groom_relative{{i.id}}">Relative</label>
+                <input type="text" id="groom_relative{{i.id}}" name="{{i.id}}" value="{{i.name}}" required>
+                <input type="text" id="groom_relation{{i.id}}" name="relation{{i.id}}" value="{{i.relation}}" required>
+                <input type="file" id="groom_relative_pic{{i.id}}" name="relative_pic{{i.id}}" accept="image/*" onchange="loadGroomRelativeImage(event,'{{i.id}}')" >
+                <div class="image-preview">
+                    <img id="groom-relative-img-preview{{i.id}}" src="data:photo/png;base64,{{i.image}}" alt="relative Image Preview">
+                </div>
+                {%endfor%} 
+            </div>
+
+            <div class="form-phase" id="phase-4">
                 <h2>Bride Details</h2>
                 <label for="bride-name">Name:</label>
                 <input type="text" id="bride-name" name="bride-name" value="{{details['bride_name']}}" required>
@@ -73,24 +70,6 @@
                 <label for="bride-dob">Date of Birth:</label>
                 <input type="date" id="bride-dob" name="bride-dob" value="{{details['bride_dob']}}" required>
 
-                <label for="bride-relative1">Relative 1:</label>
-                <input type="text" id="bride-relative1" name="bride-relative1" value="{{details['bride_relative1']}}" required>
-
-                <label for="bride-relation1">Relation 1:</label>
-                <input type="text" id="bride-relation1" name="bride-relation1" value="{{details['bride_relation1']}}" required>
-
-                <label for="bride-relative2">Relative 2:</label>
-                <input type="text" id="bride-relative2" name="bride-relative2" value="{{details['bride_relative2']}}" required>
-
-                <label for="bride-relation2">Relation 2:</label>
-                <input type="text" id="bride-relation2" name="bride-relation2" value="{{details['bride_relation2']}}" required>
-
-                <label for="bride-relative3">Relative 3:</label>
-                <input type="text" id="bride-relative3" name="bride-relative3" value="{{details['bride_relative3']}}" required>
-
-                <label for="bride-relation3">Relation 3:</label>
-                <input type="text" id="bride-relation3" name="bride-relation3" value="{{details['bride_relation3']}}" required>
-
                 <label for="bride-pic">Picture:</label>
                 <input type="file" id="bride-pic" name="bride-pic" accept="image/*" onchange="loadBrideImage(event)" >
                 <div class="image-preview">
@@ -99,10 +78,22 @@
             </div>
             
             <!-- Phase 3: Groom Details -->
-            
+            <div class="form-phase" id="phase-5">
+                <h2>Bride Relatives</h2>
+                {% for i in details['bride_relatives'] %}
+                
+                <label for="bride_relative{{i.id}}">Relative</label>
+                <input type="text" id="bride_relative{{i.id}}" name="{{i.id}}" value="{{i.name}}" required>
+                <input type="text" id="bride_relation{{i.id}}" name="relation{{i.id}}" value="{{i.relation}}" required>
+                <input type="file" id="bride_relative_pic{{i.id}}" name="relative_pic{{i.id}}" accept="image/*" onchange="loadBrideRelativeImage(event,'{{i.id}}')" >
+                <div class="image-preview">
+                    <img id="bride-relative-img-preview{{i.id}}" src="data:photo/png;base64,{{i.image}}" alt="relative Image Preview">
+                </div>
+                {%endfor%} 
+            </div>
             
             <!-- Phase 4: Couple Images -->
-            <div class="form-phase" id="phase-4">
+            <div class="form-phase" id="phase-6">
                 <h2>Couple Images</h2>
                 <div class="existing-images">
                     {%for image in details['images']%}
@@ -112,7 +103,7 @@
                     </div>
                     {%endfor%}
                 </div>
-                <label for="new-couple-pic">Add New Picture:</label>
+                <label for="new-couple-pic">Add New Pictures:</label>
                 <input type="file" id="new-couple-pic" name="new-couple-pic" accept="image/*" multiple>
             </div>
             

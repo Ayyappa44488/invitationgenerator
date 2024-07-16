@@ -5,3 +5,5 @@ pymysql
 flask_migrate
 flask_bcrypt
 base64
+llama-cpp-python
+qrcode

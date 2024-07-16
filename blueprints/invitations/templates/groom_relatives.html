@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Marriage Details</title>
+    <link rel="icon" href="/static/images/home/logo.png" type="image/png">
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/static/fonts/invitations/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/css/invitation/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">{{name}} Relatives</h2>
+                        <form action="{{api_url}}" method="POST" class="register-form" id="register-form" enctype="multipart/form-data">
+                            {% for i in range(relative_count) %}
+                            <div class="form-group">
+                                <label for="relative{{i}}"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="relative{{i}}" id="relative{{i}}" placeholder="Relative's Name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="relation{{i}}"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="relation{{i}}" id="relation{{i}}" placeholder="Relation"/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="image{{i}}"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="file" name="image{{i}}" id="image{{i}}" data-max_length="1" placeholder="Groom image"/>
+                            </div>
+                            {%endfor%}
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Next"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image" style="height:600px;">
+                        <figure><img src="/static/images/invitation/groom.png" alt="sing up image" ></figure>
+                        <!-- <a href="#" class="signup-image-link">I am already member</a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sing in  Form -->
+
+    </div>
+
+    <!-- JS -->
+    <script src="/static/jquery/invitations/jquery/jquery.min.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

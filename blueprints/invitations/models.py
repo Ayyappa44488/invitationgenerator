@@ -9,6 +9,7 @@ class Invitation(db.Model):
     place = db.Column(db.String(80), nullable=False)
     marriage_date = db.Column(db.Date, nullable=False)
     marriage_time = db.Column(db.Time, nullable=False)
+    template_selected = db.Column(db.Integer, nullable=True)
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(db.DateTime, server_default=db.func.now(),
                            server_onupdate=db.func.now())
@@ -83,3 +84,24 @@ class Relative(db.Model):
 
     def __repr__(self):
         return '<Relative %r>' % self.id
+    
+class LoveStory(db.Model):
+    __tablename__ = 'lovestory'
+    id = db.Column(db.Integer, primary_key=True)
+    invitation_id = db.Column(db.Integer, db.ForeignKey('invitations.id'),
+                              nullable=False)
+    first_meet = db.Column(db.String(1000), nullable=False)
+    first_date = db.Column(db.String(1000), nullable=False)
+    proposal = db.Column(db.String(1000), nullable=False)
+    engagement = db.Column(db.String(1000), nullable=False)
+    first_meet_date = db.Column(db.Date, nullable=False)
+    first_date_date = db.Column(db.Date, nullable=False)
+    proposal_date = db.Column(db.Date, nullable=False)
+    engagement_date = db.Column(db.Date, nullable=False)
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
+    updated_at = db.Column(db.DateTime, server_default=db.func.now(),
+                           server_onupdate=db.func.now())
+    deleted_at = db.Column(db.DateTime, nullable=True)
+
+    def __repr__(self):
+        return '<LoveStory %r>' % self.id

@@ -125,6 +125,16 @@ function loadGroomImage(event) {
     output.src = URL.createObjectURL(event.target.files[0]);
 }
 
+function loadGroomRelativeImage(event,i) {
+    const output = document.getElementById('groom-relative-img-preview'+i);
+    output.src = URL.createObjectURL(event.target.files[0]);
+}
+
+function loadBrideRelativeImage(event,i){
+    const output = document.getElementById('bride-relative-img-preview'+i);
+    output.src = URL.createObjectURL(event.target.files[0]);
+}
+
 let fileInput = document.getElementById("new-couple-pic");
 let imageContainer = document.getElementById("images");
 let numOfFiles = document.getElementById("num-of-files");

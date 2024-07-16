@@ -23,6 +23,7 @@ def register():
 
     session['logged_in']=True
     session['user_id']=data.id
+    session['user_name']=(data.name).capitalize()
 
     return redirect('/')
 

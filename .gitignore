@@ -1,3 +1,6 @@
 env/
 __pycache__/
 confidential.py
+llama-2-7b-chat.ggmlv3.q2_K.bin
+llama-2-7b-chat.ggmlv3.q4_0.bin
+ai.py

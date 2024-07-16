@@ -189,8 +189,8 @@
                     <div class="col-md-6 text-center text-md-left">
                         <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
                             <h4 class="mb-2">First Meet</h4>
-                            <p class="text-uppercase mb-2">01 Jan 2050</p>
-                            <p class="m-0">Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet est dolor elitr.</p>
+                            <p class="text-uppercase mb-2">{{details['first_meet_date']}}</p>
+                            <p class="m-0">{{details['first_meet']}}</p>
                         </div>
                     </div>
                 </div>
@@ -198,8 +198,8 @@
                     <div class="col-md-6 text-center text-md-right">
                         <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
                             <h4 class="mb-2">First Date</h4>
-                            <p class="text-uppercase mb-2">01 Jan 2050</p>
-                            <p class="m-0">Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet est dolor elitr.</p>
+                            <p class="text-uppercase mb-2">{{details['first_date_date']}}</p>
+                            <p class="m-0">{{details['first_date']}}</p>
                         </div>
                     </div>
                     <div class="col-md-6 text-center text-md-left">
@@ -213,8 +213,8 @@
                     <div class="col-md-6 text-center text-md-left">
                         <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
                             <h4 class="mb-2">Proposal</h4>
-                            <p class="text-uppercase mb-2">01 Jan 2050</p>
-                            <p class="m-0">Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet est dolor elitr.</p>
+                            <p class="text-uppercase mb-2">{{details['proposal_date']}}</p>
+                            <p class="m-0">{{details['proposal']}}</p>
                         </div>
                     </div>
                 </div>
@@ -222,8 +222,8 @@
                     <div class="col-md-6 text-center text-md-right">
                         <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
                             <h4 class="mb-2">Enagagement</h4>
-                            <p class="text-uppercase mb-2">01 Jan 2050</p>
-                            <p class="m-0">Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd stet amet est dolor elitr.</p>
+                            <p class="text-uppercase mb-2">{{details['engagement_date']}}</p>
+                            <p class="m-0">{{details['engagement']}}</p>
                         </div>
                     </div>
                     <div class="col-md-6 text-center text-md-left">
@@ -313,96 +313,40 @@
                 </div>
             </div>
             <div class="row portfolio-container">
+                {% for i in details['groom_relatives'] %}
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
                     <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="/static/images/invitation/img/groomsmen-1.jpg" alt="">
+                        <img class="img-fluid w-100 h-300" src="data:photo/png;base64,{{i.image}}" alt="">
                         <div class="bg-secondary text-center p-4">
-                            <h4 class="mb-3">{{details['groom_relative1']}}</h4>
-                            <p class="text-uppercase">{{details['groom_relation1']}}</p>
-                            <div class="d-inline-block">
+                            <h4 class="text-uppercase mb-3">{{i.name}}</h4>
+                            <p class="text-uppercase">{{i.relation}}</p>
+                            <!-- <div class="d-inline-block">
                                 <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
                                 <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
                                 <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
                                 <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
+                {% endfor %}
+                {% for i in details['bride_relatives'] %}
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="/static/images/invitation/img/bridesmaid-1.jpg" alt="">
+                        <img class="img-fluid w-100 h-300" src="data:photo/png;base64,{{i.image}}" alt="">
                         <div class="bg-secondary text-center p-4">
-                            <h4 class="mb-3">{{details['bride_relative1']}}</h4>
-                            <p class="text-uppercase">{{details['bride_relation1']}}</p>
-                            <div class="d-inline-block">
+                            <h4 class="text-uppercase mb-3">{{i.name}}</h4>
+                            <p class="text-uppercase">{{i.relation}}</p>
+                            <!-- <div class="d-inline-block">
                                 <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
                                 <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
                                 <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
                                 <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="/static/images/invitation/img/groomsmen-2.jpg" alt="">
-                        <div class="bg-secondary text-center p-4">
-                            <h4 class="mb-3">{{details['groom_relative2']}}</h4>
-                            <p class="text-uppercase">{{details['groom_relation2']}}</p>
-                            <div class="d-inline-block">
-                                <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="/static/images/invitation/img/bridesmaid-2.jpg" alt="">
-                        <div class="bg-secondary text-center p-4">
-                            <h4 class="mb-3">{{details['bride_relative2']}}</h4>
-                            <p class="text-uppercase">{{details['bride_relation2']}}</p>
-                            <div class="d-inline-block">
-                                <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="/static/images/invitation/img/groomsmen-3.jpg" alt="">
-                        <div class="bg-secondary text-center p-4">
-                            <h4 class="mb-3">{{details['groom_relative3']}}</h4>
-                            <p class="text-uppercase">{{details['groom_relation3']}}</p>
-                            <div class="d-inline-block">
-                                <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative mb-2">
-                        <img class="img-fluid w-100" src="/static/images/invitation/img/bridesmaid-3.jpg" alt="">
-                        <div class="bg-secondary text-center p-4">
-                            <h4 class="mb-3">{{details['bride_relative3']}}</h4>
-                            <p class="text-uppercase">{{details['bride_relation3']}}</p>
-                            <div class="d-inline-block">
-                                <a class="mx-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="mx-2" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -451,6 +395,7 @@
                                 <textarea class="form-control bg-secondary border-0 py-2 px-3" rows="5" placeholder="Message" name="message"></textarea>
                             </div>
                             <input type="hidden" name="invitation_id" id="invitationId">
+                            <input type="hidden" name="template_id" id="templateId">
                             <div>
                                 <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit">Submit</button>
                             </div>
@@ -514,10 +459,12 @@
         const pathSegments = urlObj.pathname.split('/');
 
         // Get the last segment which is the invitation ID
+        const templateId = pathSegments.pop();
         const invitationId = pathSegments.pop();
 
         // Set the value of the hidden input field
         document.getElementById('invitationId').value = invitationId;
+        document.getElementById('templateId').value = templateId;
     </script>
     <!-- Template Javascript -->
     <script src="/static/js/invitation/main.js"></script>
