@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Languages</title>
+        <link rel="icon" href="/static/images/home/logo.png" type="image/png">
+        <link rel="stylesheet" href="/static/css/invitation/language.css" />
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+        <div class="languages">
+            <h1>Select Language</h1>
+        </div>
+
+        <div class="languages">
+            <button onclick="document.location='/invitation/qr_code/{{invitation_id}}/{{template_id}}/en'" class="home-btn" >English</button>
+            <button onclick="document.location='/invitation/qr_code/{{invitation_id}}/{{template_id}}/te'" class="home-btn">Telugu</button>
+        </div>
+        <div class="languages">
+            <span>Note: Card will be displayed in selected languages</span>
+    </div>
+    </body>
+</html>

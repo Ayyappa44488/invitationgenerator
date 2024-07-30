@@ -36,19 +36,19 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#story" class="nav-item nav-link">Story</a>
-                <a href="#gallery" class="nav-item nav-link">Gallery</a>
+                <a href="#home" class="nav-item nav-link active">హోమ్</a> </a>
+                <a href="#about" class="nav-item nav-link">గురించి</a>
+                <a href="#story" class="nav-item nav-link">కథ</a>
+                <a href="#gallery" class="nav-item nav-link">గ్యాలరీ</a>
             </div>
             <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
                 <h1 class="font-secondary text-white mb-n2">{{details['groom_name']}} <span class="text-primary">&</span> {{details['bride_name']}}</h1>
             </a>
             <div class="navbar-nav mr-auto py-0">
-                <a href="#family" class="nav-item nav-link">Family</a>
-                <a href="#event" class="nav-item nav-link">Event</a>
+                <a href="#family" class="nav-item nav-link">కుటుంబం</a>
+                <a href="#event" class="nav-item nav-link">వేడుక</a>
                 <a href="#rsvp" class="nav-item nav-link">RSVP</a>
-                <a href="#contact" class="nav-item nav-link">Contact</a>
+                <a href="#contact" class="nav-item nav-link">సంప్రదించండి</a>
             </div>
         </div>
     </nav>
@@ -65,7 +65,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">{{details['groom_name']}} & {{details['bride_name']}}</h1>
                             <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
-                                <h3 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">We're getting married</h3>
+                                <h3 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">మేము వివాహం చేసుకుంటున్నాము</h3>
                             </div>
                             <button type="button" class="btn-play mx-auto" data-toggle="modal"
                                 data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
@@ -80,7 +80,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">{{details['groom_name']}} & {{details['bride_name']}}</h1>
                             <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
-                                <h3 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">We're getting married</h3>
+                                <h3 class="text-uppercase font-weight-normal text-white m-0" style="letter-spacing: 2px;">మేము వివాహం చేసుకుంటున్నాము</h3>
                             </div>
                             <button type="button" class="btn-play mx-auto" data-toggle="modal"
                                 data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
@@ -111,7 +111,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">×</span>
                     </button>        
                     <!-- 16:9 aspect ratio -->
                     <div class="embed-responsive embed-responsive-16by9">
@@ -128,15 +128,15 @@
     <div class="container-fluid py-5" id="about">
         <div class="container py-5">
             <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">About</h6>
-                <h1 class="font-secondary display-4">Groom & Bride</h1>
+                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">గురించి</h6>
+                <h1 class="font-secondary display-4">వరుడు & వధువు</h1>
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="row m-0 mb-4 mb-md-0 pb-2 pb-md-0">
                 <div class="col-md-6 p-0 text-center text-md-right">
                     <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
-                        <h3 class="mb-3">The Groom</h3>
-                        <p>Born on {{details['groom_dob']}}<br>{{details['groom_qualification']}}</p>
+                        <h3 class="mb-3">వరుడు</h3>
+                        <p>పుట్టిన తేదీ {{details['groom_dob']}}<br>{{details['groom_qualification']}}</p>
                         <h3 class="font-secondary font-weight-normal text-muted mb-3"><i class="fa fa-male text-primary pr-3"></i>{{details['groom_name']}}</h3>
                         <div class="position-relative">
                             <!-- <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-twitter"></i></a>
@@ -156,8 +156,8 @@
                 </div>
                 <div class="col-md-6 p-0 text-center text-md-left">
                     <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-5">
-                        <h3 class="mb-3">The Bride</h3>
-                        <p>Born on {{details['bride_dob']}}<br>{{details['bride_qualification']}}</p>
+                        <h3 class="mb-3">వధువు</h3>
+                        <p>పుట్టిన తేదీ {{details['bride_dob']}}<br>{{details['bride_qualification']}}</p>
                         <h3 class="font-secondary font-weight-normal text-muted mb-3"><i class="fa fa-female text-primary pr-3"></i>{{details['bride_name']}}</h3>
                         <div class="position-relative">
                             <!-- <a class="btn btn-outline-primary btn-square mr-1" href="#"><i class="fab fa-instagram"></i></a>
@@ -174,11 +174,12 @@
 
 
     <!-- Story Start -->
+     {%if details['subscription']%}
     <div class="container-fluid py-5" id="story">
         <div class="container pt-5 pb-3">
             <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Story</h6>
-                <h1 class="font-secondary display-4">Our Love Story</h1>
+                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">కథ</h6>
+                <h1 class="font-secondary display-4">మా ప్రేమ కథ</h1>
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="container timeline position-relative p-0">
@@ -188,7 +189,7 @@
                     </div>
                     <div class="col-md-6 text-center text-md-left">
                         <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                            <h4 class="mb-2">First Meet</h4>
+                            <h4 class="mb-2">మొదటి సమావేశం</h4>
                             <p class="text-uppercase mb-2">{{details['first_meet_date']}}</p>
                             <p class="m-0">{{details['first_meet']}}</p>
                         </div>
@@ -197,7 +198,7 @@
                 <div class="row">
                     <div class="col-md-6 text-center text-md-right">
                         <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
-                            <h4 class="mb-2">First Date</h4>
+                            <h4 class="mb-2">మొదటి డేటింగ్</h4>
                             <p class="text-uppercase mb-2">{{details['first_date_date']}}</p>
                             <p class="m-0">{{details['first_date']}}</p>
                         </div>
@@ -212,7 +213,7 @@
                     </div>
                     <div class="col-md-6 text-center text-md-left">
                         <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                            <h4 class="mb-2">Proposal</h4>
+                            <h4 class="mb-2">ప్రపోజల్</h4>
                             <p class="text-uppercase mb-2">{{details['proposal_date']}}</p>
                             <p class="m-0">{{details['proposal']}}</p>
                         </div>
@@ -221,7 +222,7 @@
                 <div class="row">
                     <div class="col-md-6 text-center text-md-right">
                         <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
-                            <h4 class="mb-2">Enagagement</h4>
+                            <h4 class="mb-2">నిశ్చితార్థం</h4>
                             <p class="text-uppercase mb-2">{{details['engagement_date']}}</p>
                             <p class="m-0">{{details['engagement']}}</p>
                         </div>
@@ -233,14 +234,15 @@
             </div>
         </div>
     </div>
+    {%endif%}
     <!-- Story End -->
 
 
     <!-- Gallery Start -->
     <div class="container-fluid bg-gallery" id="gallery" style="padding: 120px 0; margin: 90px 0;">
         <div class="section-title position-relative text-center" style="margin-bottom: 120px;">
-            <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Gallery</h6>
-            <h1 class="font-secondary display-4 text-white">Our Photo Gallery</h1>
+            <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">గ్యాలరీ</h6>
+            <h1 class="font-secondary display-4 text-white">మా ఫోటో గ్యాలరీ</h1>
             <i class="far fa-heart text-white"></i>
         </div>
         <div class="owl-carousel gallery-carousel">
@@ -261,33 +263,33 @@
     <div class="container-fluid py-5" id="event">
         <div class="container py-5">
             <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Event</h6>
-                <h1 class="font-secondary display-4">Our Wedding Event</h1>
+                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">వేడుక</h6>
+                <h1 class="font-secondary display-4">మా వివాహ వేడుక</h1>
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center">
-                    <h5 class="font-weight-normal text-muted mb-3 pb-3">With love we say "I do,"<br>
-                        Join us as dreams come true.<br>
-                        Celebrate our joy-filled day,<br>
-                        Memories we'll make along the way.</h5>
+                    <h5 class="font-weight-normal text-muted mb-3 pb-3">ప్రేమతో మేము "నేను చేస్తాను" అని అంటున్నాము,<br>
+                        కలలు నిజమవుతున్నప్పుడు మాతో చేరండి.<br>
+                        మా ఆనంద రోజును జరుపుకుందాం,<br>
+                        మార్గం వెంట మనం తయారుచేసే జ్ఞాపకాలు.</h5>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 border-right border-primary">
                     <div class="text-center text-md-right mr-md-3 mb-4 mb-md-0">
                         <img class="img-fluid mb-4" src="/static/images/invitation/img/event-1.jpg" alt="">
-                        <h4 class="mb-3">The Reception</h4>
+                        <h4 class="mb-3">వివాహ విందు</h4>
                         <p class="mb-2">{{details['marriage_date']}}</p>
-                        <p class="mb-0">Knot Time : {{details['marriage_time']}}</p>
+                        <p class="mb-0">ముడి సమయం: {{details['marriage_time']}}</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="text-center text-md-left ml-md-3">
                         <img class="img-fluid mb-4" src="/static/images/invitation/img/event-2.jpg" alt="">
-                        <h4 class="mb-3">Wedding Party</h4>
+                        <h4 class="mb-3">వివాహ విందు</h4>
                         <p class="mb-2">{{details['marriage_date']}}</p>
-                        <p class="mb-0">Knot Time : {{details['marriage_time']}}</p>
+                        <p class="mb-0">ముడి సమయం: {{details['marriage_time']}}</p>
                     </div>
                 </div>
             </div>
@@ -300,15 +302,15 @@
     <div class="container-fluid py-5" id="family">
         <div class="container pt-5 pb-3">
             <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Friends & Family</h6>
-                <h1 class="font-secondary display-4">Groomsmen & Bridesmaid</h1>
+                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">స్నేహితులు & కుటుంబం</h6>
+                <h1 class="font-secondary display-4">వరుడి బంధువులు & వధువు బంధువులు</h1>
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="row">
                 <div class="col-12 text-center mb-2">
                     <ul class="list-inline mb-4" id="portfolio-flters">
-                        <li class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" data-filter=".first">Groomsmen</li>
-                        <li class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" data-filter=".second">Bridesmaid</li>
+                        <li class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" data-filter=".first">వరుడి బంధువులు</li>
+                        <li class="btn btn-outline-primary font-weight-bold m-1 py-2 px-4" data-filter=".second">వధువు బంధువులు</li>
                     </ul>
                 </div>
             </div>
@@ -358,7 +360,7 @@
         <div class="container py-5">
             <div class="section-title position-relative text-center">
                 <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">RSVP</h6>
-                <h1 class="font-secondary display-4">Join Our Party</h1>
+                <h1 class="font-secondary display-4">మా పార్టీలో చేరండి</h1>
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div class="row justify-content-center">
@@ -367,16 +369,16 @@
                         <form action="/invitation/rvsp" method="POST">
                             <div class="form-row">
                                 <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3" placeholder="Your Name" name="name" required/>
+                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3" placeholder="మీ పేరు" name="name" required/>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3" placeholder="Your Phone" name="phone" required/>
+                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3" placeholder="మీ ఫోన్ నంబర్" name="phone" required/>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-sm-6">
                                     <select class="form-control bg-secondary border-0" style="height: 52px;" name="guests_count">
-                                        <option>Number of Guest</option>
+                                        <option>అతిధుల సంఖ్య</option>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -385,19 +387,20 @@
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <select class="form-control bg-secondary border-0" style="height: 52px;" name="attending">
-                                        <option>I'm Attending</option>
-                                        <option>All Events</option>
-                                        <option>Wedding Party</option>
+                                        <option>నేను హాజరవుతాను</option>
+                                        <option>అన్ని ఈవెంట్‌లు</option>
+                                        <option>వివాహ విందు</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control bg-secondary border-0 py-2 px-3" rows="5" placeholder="Message" name="message"></textarea>
+                                <textarea class="form-control bg-secondary border-0 py-2 px-3" rows="5" placeholder="సందేశం" name="message"></textarea>
                             </div>
                             <input type="hidden" name="invitation_id" id="invitationId">
                             <input type="hidden" name="template_id" id="templateId">
+                            <input type="hidden" name="langcode" id="langcode">
                             <div>
-                                <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit">Submit</button>
+                                <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit">సమర్పించు</button>
                             </div>
                         </form>
                     </div>
@@ -412,7 +415,7 @@
     <div class="container-fluid bg-dark text-white py-5" id="contact" style="margin-top: 90px;">
         <div class="container text-center py-5">
             <div class="section-title position-relative text-center">
-                <h1 class="font-secondary display-3 text-white">Thank You</h1>
+                <h1 class="font-secondary display-3 text-white">ధన్యవాదాలు</h1>
                 <i class="far fa-heart text-white"></i>
             </div>
             <div class="d-flex justify-content-center mb-4">
@@ -426,7 +429,7 @@
                 <span class="px-3">|</span>
                 <p class="text-white" href="#">+012 345 6789</p>
             </div>
-            <p class="m-0">&copy; <a class="text-primary" href="#">Domain Name</a>. Designed by <a class="text-primary" href="https://htmlcodex.com">HTML Codex</a>
+            <p class="m-0">© <a class="text-primary" href="#">Domain Name</a>. Designed by <a class="text-primary" href="https://htmlcodex.com">HTML Codex</a>
             </p>
         </div>
     </div>
@@ -459,12 +462,14 @@
         const pathSegments = urlObj.pathname.split('/');
 
         // Get the last segment which is the invitation ID
+        const langCode = pathSegments.pop();
         const templateId = pathSegments.pop();
         const invitationId = pathSegments.pop();
 
         // Set the value of the hidden input field
         document.getElementById('invitationId').value = invitationId;
         document.getElementById('templateId').value = templateId;
+        document.getElementById('langcode').value = langCode;
     </script>
     <!-- Template Javascript -->
     <script src="/static/js/invitation/main.js"></script>

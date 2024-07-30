@@ -7,3 +7,4 @@ flask_bcrypt
 base64
 llama-cpp-python
 qrcode
+requests

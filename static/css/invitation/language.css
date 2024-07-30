@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    src: url("/static/fonts/invitations/fonts/poppins/poppins-v5-latin-300.eot");
+    /* IE9 Compat Modes */
+    src: local("Poppins Light"), local("Poppins-Light"), url("/static/fonts/invitations/fonts/poppins/poppins-v5-latin-300.eot?#iefix") format("embedded-opentype"), url("/static/fonts/invitations/fonts/poppins/poppins-v5-latin-300.woff2") format("woff2"), url("/static/fonts/invitations/fonts/poppins/poppins-v5-latin-300.woff") format("woff"), url("/static/fonts/invitations/fonts/poppins/poppins-v5-latin-300.ttf") format("truetype"), url("/static/fonts/invitations/fonts/poppins/poppins-v5-latin-300.svg#Poppins") format("svg");
+    /* Legacy iOS */ }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+    font-weight: 400;
+}
+
+.home-btn{
+    background-color: #5bdae3;
+    border:none;
+    /* border-radius: 5px; */
+    color: white;
+    padding:10px 82px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    /* box-shadow: 0 12px 17px 0 rgba(0, 0, 0, 0.1),0 17px 50px 0 rgba(0, 0, 0, 0.12); */
+}
+
+.home-btn:hover{
+    /* box-shadow: 0 12px 17px 0 rgba(119, 154, 173, 0.715),0 17px 50px 0 rgba(110, 228, 222, 0.77); */
+    box-shadow: 3px 3px 3px #5bdae3;
+
+}
+
+.languages{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.languages span{
+    font-size: 15px;
+    font-weight: bold;
+    color: tomato;
+}

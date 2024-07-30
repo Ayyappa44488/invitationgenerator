@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,session
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from confidential import mysql_url

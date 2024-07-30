@@ -6,6 +6,8 @@
     <title>qrcode</title>
     <link rel="icon" href="/static/images/home/logo.png" type="image/png">
     <link rel="stylesheet" href="/static/css/invitation/qrcode.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
     <div class="container">
@@ -16,7 +18,8 @@
         </div>
         <div class="copy-bar">
             <input type="text" value="{{url}}" id="imageLink" readonly>
-            <button onclick="copyLink()">Copy</button>
+            <span onclick="copyLink()"><i class="material-icons">&#xe14d;</i></span>
+            <span onclick="window.open('{{url}}', '_blank')"><i class="material-icons">&#xe89e;</i></span>
         </div>
     </div>
 

@@ -24,8 +24,9 @@ def register():
     session['logged_in']=True
     session['user_id']=data.id
     session['user_name']=(data.name).capitalize()
-
-    return redirect('/')
+    session['subscription']= "Free Plan"
+    
+    return redirect('/#pricing')
 
 
 @user.route('/validate',methods=['POST'])
@@ -38,11 +39,19 @@ def validate():
         session['logged_in']=True
         session['user_id']=data.id
         session['user_name']=(data.name).capitalize()
+        session['subscription']= "Free Plan" if data.subscription==0 else "Premium Plan"
         return redirect('/')
 
     else:
         return jsonify({'message':'Login Failed'})
 
+@user.route('/subscribe/<int:id>')
+def subscribe(id):
+    user=User.query.filter_by(id=session['user_id']).first()
+    user.subscription=id
+    db.session.commit()
+    session['subscription']= "Free Plan" if user.subscription==0 else "Premium Plan"
+    return redirect('/')
 
 @user.route('/logout')
 def logout():

@@ -49,13 +49,13 @@
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"> About</a>
+                <a class="nav-link" href="#about"> About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Work </a>
+                <a class="nav-link" href="#portfolio">Steps </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Sample </a>
+                <a class="nav-link" href="#pricing">Pricing </a>
               </li>
             </ul>
             <div class="user_option">
@@ -255,6 +255,13 @@
 <!-- pricing section -->
 <section class="section" id="pricing">
     <div class="container text-center">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+              <span class="flash-message {{ category }}">{{ message }}</span>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
         <p class="section-subtitle">How Much I Charge ?</p>
         <h6 class="section-title mb-6">My Pricing</h6>
         <!-- row -->
@@ -270,7 +277,7 @@
                         <p>access to single template at a time</p>
                         <p><i>&times;</i></p>
                         <p><i>&times;</i></p>
-                        <p><i>&times;</i></p>
+                        <!-- <p><i>&times;</i></p> -->
 
                     </div>
                 </div>
@@ -278,29 +285,13 @@
                     <span>$</span>
                     <span>0.00/Month</span>
                 </div>
-                <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Subscribe</a>
+                {%if session['subscription'] == 'Premium Plan'%}
+                <a href="/user/subscribe/0" class="btn btn-primary mt-3 pricing-card-btn">Degrade</a>{%endif%}
+                {%if session['subscription'] == 'Free Plan'%}
+                <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Current Plan</a>
+                {%endif%}
             </div>
-            <div class="pricing-card">
-                <div class="pricing-card-header">
-                    <img class="pricing-card-icon" src="/static/css/home/home1/assets/imgs/shipped.svg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                </div>
-                <div class="pricing-card-body">
-                    <h6 class="pricing-card-title">Basic</h6>
-                    <div class="pricing-card-list">
-                      <p>Create basic webpage</p>
-                      <p>access to single template at a time</p>
-                      <p>access to ai tool</p>
-                      <p><i>&times;</i></p>
-                      <p><i>&times;</i></p>
-
-                    </div>
-                </div>
-                <div class="pricing-card-footer">
-                    <span>$</span>
-                    <span>9.99/Month</span>
-                </div>
-                <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Subscribe</a>
-            </div>
+            
             <div class="pricing-card">
                 <div class="pricing-card-header">
                     <img class="pricing-card-icon" src="/static/css/home/home1/assets/imgs/startup.svg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
@@ -309,109 +300,25 @@
                     <h6 class="pricing-card-title">Premium</h6>
                     <div class="pricing-card-list">
                       <p>Create basic webpage</p>
-                      <p>access to single template at a time</p>
+                      <p>access to all templates</p>
                       <p>access to ai tool</p>
                       <p>access to multiple languages</p>
-                      <p>access to all templates</p>
                     </div>
                 </div>
                 <div class="pricing-card-footer">
                     <span>$</span>
                     <span>99.9/Month</span>
                 </div>
-                <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Subscribe</a>
+                {%if session['subscription'] == 'Free Plan'%}
+                <a href="/user/subscribe/1" class="btn btn-primary mt-3 pricing-card-btn">Upgrade</a>{%endif%}
+                {%if session['subscription'] == 'Premium Plan'%}
+                <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Current Plan</a>
+                {%endif%}
             </div>
 
         </div><!-- end of pricing wrapper -->
     </div> <!-- end of container -->
 </section><!-- end of pricing section -->
-
-
-
-<!-- testimonial section -->
-<section class="section" id="testmonial">
-    <div class="container text-center">
-        <p class="section-subtitle">What Think Client About Me ?</p>
-        <h6 class="section-title mb-6">Testmonial</h6>
-
-        <!-- row -->
-        <div class="row">
-            <div class="col-md-6">
-                <div class="testimonial-card">
-                    <div class="testimonial-card-img-holder">
-                        <img src="/static/css/home/home1/assets/imgs/avatar2.jpg" class="testimonial-card-img" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">                           
-                    </div>
-                    <div class="testimonial-card-body">
-                        <p class="testimonial-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque doloribus autem aperiam earum nostrum omnis blanditiis corporis perspiciatis adipisci nihil.</p>
-                        <h6 class="testimonial-card-title">Emily Reb</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="testimonial-card">
-                    <div class="testimonial-card-img-holder">
-                        <img src="/static/css/home/home1/assets/imgs/avatar3.jpg" class="testimonial-card-img" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">                        
-                    </div>
-                    <div class="testimonial-card-body">
-                        <p class="testimonial-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque doloribus autem aperiam earum nostrum omnis blanditiis corporis perspiciatis adipisci nihil.</p>
-                        <h6 class="testimonial-card-title">Emily Reb</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- end of container -->
-</section> <!-- end of testimonial section -->
-
-<!-- blog section -->
-<section class="section" id="blog">
-    <!-- container -->
-    <div class="container text-center">
-        <p class="section-subtitle">Recent Posts?</p>
-        <h6 class="section-title mb-6">Blog</h6>
-        <!-- blog-wrapper -->
-        <div class="blog-card">
-            <div class="blog-card-header">
-                <img src="/static/css/home/home1/assets/imgs/img-1.jpg" class="blog-card-img" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-            </div>
-            <div class="blog-card-body">
-                <h5 class="blog-card-title">Consectetur adipisicing elit</h6>
-
-                <p class="blog-card-caption">
-                    <a href="#">By: Admin</a>
-                    <a href="#"><i class="ti-heart text-danger"></i> 234</a>
-                    <a href="#"><i class="ti-comment"></i> 123</a>
-                </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet nesciunt qui sit velit delectus voluptates, repellat ipsum culpa id deleniti. Rerum debitis facilis accusantium neque numquam mollitia modi quasi distinctio.</p>
-
-                <p><b>Necessitatibus nihil impedit! Ex nisi eveniet, dolor aliquid consequuntur repudiandae.</b></p>
-                <p>Magnam in repellat enim harum omnis aperiam! Explicabo illo, commodi, dolor blanditiis cupiditate harum nisi vero accusamus laudantium voluptatibus dolores quae obcaecati.</p>
-
-                <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-            </div>
-        </div><!-- end of blog wrapper -->
-
-        <!-- blog-wrapper -->
-        <div class="blog-card">
-            <div class="blog-card-header">
-                <img src="/static/css/home/home1/assets/imgs/img-2.jpg" class="blog-card-img" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-            </div>
-            <div class="blog-card-body">
-                <h5 class="blog-card-title">Explicabo illo</h6>
-
-                <p class="blog-card-caption">
-                    <a href="#">By: Admin</a>
-                    <a href="#"><i class="ti-heart text-danger"></i> 456</a>
-                    <a href="#"><i class="ti-comment"></i> 264</a>
-                </p>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi laborum enim, vitae ipsam atque eum, ad iusto consequuntur voluptas, esse doloribus. Perferendis porro quisquam vitae exercitationem aliquid, minus eos laborum repudiandae, cumque debitis iusto omnis praesentium? Laborum placeat sit adipisci illum tempore maxime, esse qui quae? Molestias excepturi corporis similique doloribus. Esse vitae earum architecto nulla non dolores illum at perspiciatis quod, et deleniti cupiditate reiciendis harum facere, delectus eum commodi soluta distinctio sit repudiandae possimus sunt. Ipsum, rem.</p>
-
-                <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-            </div>
-        </div><!-- end of blog wrapper -->
-
-    </div><!-- end of container -->
-</section><!-- end of blog section -->
 
 <!-- contact section -->
 <section class="section" id="contact">
@@ -437,90 +344,6 @@
         </form><!-- end of contact form -->
     </div><!-- end of container -->
 </section><!-- end of contact section -->
-  
-
-
-
-  <!-- info section -->
-
-  <!-- <section class="info_section ">
-    <div class="info_container layout_padding-top">
-      <div class="container">
-        <div class="info_top">
-          <div class="info_logo">
-            <img src="/static/images/home/logo.png" alt="" />
-            <span style="margin-top: 10px;">
-              Marryme
-            </span>
-          </div>
-          <div class="social_box">
-            <a href="#">
-              <img src="/static/images/home/fb.png" alt="">
-            </a>
-            <a href="#">
-              <img src="/static/images/home/twitter.png" alt="">
-            </a>
-            <a href="#">
-              <img src="/static/images/home/linkedin.png" alt="">
-            </a>
-            <a href="#">
-              <img src="/static/images/home/instagram.png" alt="">
-            </a>
-            <a href="#">
-              <img src="/static/images/home/youtube.png" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-9 col-md-10 mx-auto">
-            <div class="info_contact layout_padding2">
-              <div class="row">
-                <div class="col-md-3">
-                  <a href="#" class="link-box">
-                    <div class="img-box">
-                      <img src="/static/images/home/location.png" alt="">
-                    </div>
-                    <div class="detail-box">
-                      <h6>
-                        Location
-                      </h6>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="#" class="link-box">
-                    <div class="img-box">
-                      <img src="/static/images/home/mail.png" alt="">
-                    </div>
-                    <div class="detail-box">
-                      <h6>
-                        demo@gmail.com
-                      </h6>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-md-5">
-                  <a href="#" class="link-box">
-                    <div class="img-box">
-                      <img src="/static/images/home/call.png" alt="">
-                    </div>
-                    <div class="detail-box">
-                      <h6>
-                        Call +01 1234567890
-                      </h6>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section> -->
-
-  <!-- end info section -->
 
   <!-- footer section -->
   <footer class="container-fluid footer_section ">
@@ -554,7 +377,8 @@
       <span onclick="closeForm()" class="cancel" title="Close window">&times;</span>
       <center><span style="color:#000">Hello {{session['user_name']}}</span>
         <hr><br>
-        <label for="email"><b><span style="color:#000">Welcome to Marryme :)</span></b></label>
+        <label for="email"><b><span style="color:#000">{{session['subscription']}}</span></b></label>
+        <!-- <label for="email"><b><span style="color:#000">Welcome to Marryme :)</span></b></label> -->
         <!-- <br><br>
         <label for="psw"><b><span style="color:#000"></span></b></label> -->
       </center>
@@ -566,7 +390,16 @@
     </form>
   <!-- end form -->
   </div>
-  
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+      const flashMessages = document.querySelectorAll('.flash-message');
+      flashMessages.forEach((msg) => {
+          setTimeout(() => {
+              msg.style.display = 'none';
+          }, 3000); // Hide after 5 seconds
+      });
+  });
+</script>
   <script src="/static/js/home/jquery-3.4.1.min.js"></script>
   <script src="/static/js/home/bootstrap.js"></script>
   <script src="/static/js/home/custom.js"></script>
